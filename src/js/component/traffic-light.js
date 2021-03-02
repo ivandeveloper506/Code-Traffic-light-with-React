@@ -8,52 +8,37 @@ export default class TrafficLight extends React.Component {
 		};
 	}
 
-	// let classNameSelected = "redLight";
-	// let classNameRedLight = "redLight";
-	// let classNameYellowLight = "yellowLight";
-	// let classNameGreenLight = "greenLight";
-
-	// let selectedRedLight = "selectedRedLight";
-	// const selectedYellowLight = "selectedLightRed";
-	// const selectedGreenLight = "selectedLightRed";
-
-	// const [trafficLightColor, setTrafficLightColor] = useState(
-	// 	classNameSelected
-	// );
-
 	render() {
 		const selectedLight = "selectedLight";
 		const redLight = "redLight";
 		const yellowLight = "yellowLight";
 		const greenLight = "greenLight";
-		const lowRedLight = "lowRedLight";
-		const lowYellowLight = "lowYellowLight";
-		const lowGreenLight = "lowGreenLight";
+		const highRedLight = "highRedLight";
+		const highYellowLight = "highYellowLight";
+		const highGreenLight = "highGreenLight";
 		let classNameRedSelected = "";
 		let classNameYellowSelected = "";
 		let classNameGreenSelected = "";
 
 		let classNameSelected = "";
 
-		console.log(this.state);
-
 		switch (this.state.selectedLight) {
 			case redLight:
-				classNameRedSelected = selectedLight;
-				classNameYellowSelected = lowYellowLight;
-				classNameGreenSelected = lowGreenLight;
+				classNameRedSelected = selectedLight + " " + highRedLight;
+				classNameYellowSelected = "";
+				classNameGreenSelected = "";
 
 				break;
 			case yellowLight:
-				classNameRedSelected = lowRedLight;
-				classNameYellowSelected = selectedLight;
-				classNameGreenSelected = lowGreenLight;
+				classNameRedSelected = "";
+				classNameYellowSelected = selectedLight + " " + highYellowLight;
+				classNameGreenSelected = "";
 
 				break;
 			case greenLight:
-				classNameRedSelected = lowRedLight;
-				classNameYellowSelected = lowYellowLight;
-				classNameGreenSelected = selectedLight;
+				classNameRedSelected = "";
+				classNameYellowSelected = "";
+				classNameGreenSelected = selectedLight + " " + highGreenLight;
 
 				break;
 		}

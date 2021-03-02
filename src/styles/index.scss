@@ -4,7 +4,7 @@
     background: black;
     height: 70px;
     width: 30px;
-    margin: 15px 0px 0px 175px;
+    margin: 15px 0px 0px 375px;
     border-radius: 10px 10px 0px 0px;
     box-shadow: inset 0 0 15px white;
 }
@@ -13,7 +13,7 @@
     background: black;
     height: 450px;
     width: 180px;
-    margin: 0px 0px 0px 100px;
+    margin: 0px 0px 0px 300px;
     padding: 20px;
     flex-direction: column;
     align-items: center;
@@ -34,27 +34,17 @@
 }
 
 .redLight {
-    background: rgb(247,51,51);
-}
-
-.yellowLight {
-    background: rgb(255,255,0);
-}
-
-.greenLight {
-    background: rgb(0,255,0);
-}
-
-// Baja al 50% la intensidad del color
-.lowRedLight {
+    // background: rgb(247,51,51);
     background: rgba(247,51,51,0.5);
 }
 
-.lowYellowLight {
-    background: rgba(255,255,0,0.5);
+.yellowLight {
+    // background: rgb(255,255,0);
+     background: rgba(255,255,0,0.5);
 }
 
-.lowGreenLight {
+.greenLight {
+    // background: rgb(0,255,0);
     background: rgba(0,255,0,0.5);
 }
 
@@ -80,8 +70,23 @@
     height: 130px;
     width: 130px;
     margin: 5px;
+    background: rgb(247,51,51);
     box-shadow: 0 0 2px 1px #fff, 0 0 50px 25px  gold;
 }
+
+// Baja al 50% la intensidad del color
+.highRedLight {
+    background: rgb(247,51,51);
+}
+
+.highYellowLight {
+    background: rgb(255,255,0);
+}
+
+.highGreenLight {
+    background: rgb(0,255,0);
+}
+
 
 
 
