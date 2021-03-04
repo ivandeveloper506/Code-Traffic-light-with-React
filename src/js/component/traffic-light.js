@@ -44,7 +44,7 @@ export default class TrafficLight extends React.Component {
 
 		return (
 			<div>
-				<div className="topTraffic"></div>
+				{/* <div className="topTraffic"></div> */}
 
 				<div className="mainContainer">
 					<div

@@ -1,6 +1,6 @@
 import React from "react";
 import TrafficLight from "./traffic-light.js";
-// import ButtonOption from "./button-option.js";
+import ButtonOption from "./button-option.js";
 import * as Param from "./parameters.js";
 
 export default function InitialTrafficLight() {
@@ -8,7 +8,7 @@ export default function InitialTrafficLight() {
 		<div>
 			<div className="container">
 				<div className="row">
-					<div className="col-8 mt-3 trafficClass">
+					<div className="col-6 mt-3 trafficClass">
 						<TrafficLight
 							redLight={Param.REDLIGHT}
 							yellowLight={Param.YELLOWLIGHT}
@@ -18,7 +18,9 @@ export default function InitialTrafficLight() {
 							selectedLightGreen=""
 						/>
 					</div>
-					{/* <ButtonOption /> */}
+					<div className="col-6 mt-5 optionClass">
+						<ButtonOption />
+					</div>
 				</div>
 			</div>
 		</div>

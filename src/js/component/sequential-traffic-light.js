@@ -1,69 +1,110 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import PropType from "prop-types";
 import TrafficLight from "./traffic-light.js";
+import ButtonOption from "./button-option.js";
 import * as Param from "./parameters.js";
 
-export function SequentialTrafficLight() {
-	return (
-		<div>
-			<TrafficLight
-				redLight={Param.REDLIGHT}
-				yellowLight={Param.YELLOWLIGHT}
-				greenLight={Param.GREENLIGHT}
-				selectedLightRed=""
-				selectedLightYellow=""
-				selectedLightGreen=""
-			/>
-		</div>
-	);
+export default class SequentialTrafficLight extends React.Component {
+	render(props) {
+		let classNameRedSelected = "";
+		let classNameYellowSelected = "";
+		let classNameGreenSelected = "";
+		let initSequential = this.props.initSequential;
+
+		let counter = 1;
+
+		console.log(
+			"*** Estoy en [SequentialTrafficLight]  -   initSequential***"
+		);
+		console.log(initSequential);
+
+		if (initSequential === "1") {
+			setInterval(() => {
+				const trafficElement = (
+					<div>
+						<div className="container">
+							<div className="row">
+								<div className="col-6 mt-3 trafficClass">
+									<TrafficLight
+										redLight={Param.REDLIGHT}
+										yellowLight={Param.YELLOWLIGHT}
+										greenLight={Param.GREENLIGHT}
+										selectedLightRed={classNameRedSelected}
+										selectedLightYellow={
+											classNameYellowSelected
+										}
+										selectedLightGreen={
+											classNameGreenSelected
+										}
+									/>
+								</div>
+								<div className="col-6 mt-5 optionClass">
+									<ButtonOption />
+								</div>
+							</div>
+						</div>
+					</div>
+				);
+
+				switch (counter) {
+					case 1: // Luz Roja
+						classNameRedSelected =
+							Param.SELECTEDLIGHT + " " + Param.HIGHREDLIGHT;
+						classNameYellowSelected = "";
+						classNameGreenSelected = "";
+
+						break;
+					case 2: // Luz Amarilla
+						classNameRedSelected = "";
+						classNameYellowSelected =
+							Param.SELECTEDLIGHT + " " + Param.HIGHYELLOWLIGHT;
+						classNameGreenSelected = "";
+
+						break;
+					case 3: // Luz Verde
+						classNameRedSelected = "";
+						classNameYellowSelected = "";
+						classNameGreenSelected =
+							Param.SELECTEDLIGHT + " " + Param.HIGHGREENLIGHT;
+
+						break;
+				}
+
+				if (counter === 3) {
+					counter = 1;
+				} else {
+					counter++;
+				}
+
+				ReactDOM.render(trafficElement, document.querySelector("#app"));
+			}, 2000);
+		}
+
+		return (
+			<div>
+				<div className="container">
+					<div className="row">
+						<div className="col-6 mt-3 trafficClass">
+							<TrafficLight
+								redLight={Param.REDLIGHT}
+								yellowLight={Param.YELLOWLIGHT}
+								greenLight={Param.GREENLIGHT}
+								selectedLightRed=""
+								selectedLightYellow=""
+								selectedLightGreen=""
+							/>
+						</div>
+						<div className="col-6 mt-5 optionClass">
+							<ButtonOption />
+						</div>
+					</div>
+				</div>
+			</div>
+		);
+	}
 }
 
-let classNameRedSelected = "";
-let classNameYellowSelected = "";
-let classNameGreenSelected = "";
-
-let counter = 1;
-
-setInterval(() => {
-	switch (counter) {
-		case 1: // Luz Roja
-			classNameRedSelected =
-				Param.SELECTEDLIGHT + " " + Param.HIGHREDLIGHT;
-			classNameYellowSelected = "";
-			classNameGreenSelected = "";
-
-			break;
-		case 2: // Luz Amarilla
-			classNameRedSelected = "";
-			classNameYellowSelected =
-				Param.SELECTEDLIGHT + " " + Param.HIGHYELLOWLIGHT;
-			classNameGreenSelected = "";
-
-			break;
-		case 3: // Luz Verde
-			classNameRedSelected = "";
-			classNameYellowSelected = "";
-			classNameGreenSelected =
-				Param.SELECTEDLIGHT + " " + Param.HIGHGREENLIGHT;
-
-			break;
-	}
-
-	if (counter === 3) {
-		counter = 1;
-	} else {
-		counter++;
-	}
-
-	ReactDOM.render(
-		<TrafficLight
-			redLight={Param.REDLIGHT}
-			yellowLight={Param.YELLOWLIGHT}
-			greenLight={Param.GREENLIGHT}
-			selectedLightRed={classNameRedSelected}
-			selectedLightYellow={classNameYellowSelected}
-			selectedLightGreen={classNameGreenSelected}
-		/>,
-		document.querySelector("#app")
-	);
-}, 3000);
+SequentialTrafficLight.propTypes = {
+	initSequential: PropType.string
+};
