@@ -2,8 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import PropType from "prop-types";
 import TrafficLight from "./traffic-light.js";
+import InitialTrafficLight from "./initial-traffic-light";
 import ButtonOption from "./button-option.js";
 import * as Param from "./parameters.js";
+
+let counterTrafficLight;
 
 export default class SequentialTrafficLight extends React.Component {
 	render(props) {
@@ -20,7 +23,7 @@ export default class SequentialTrafficLight extends React.Component {
 		console.log(initSequential);
 
 		if (initSequential === "1") {
-			setInterval(() => {
+			counterTrafficLight = setInterval(() => {
 				const trafficElement = (
 					<div>
 						<div className="container">
@@ -103,6 +106,10 @@ export default class SequentialTrafficLight extends React.Component {
 			</div>
 		);
 	}
+}
+
+export function stopSequentialTrafficLight() {
+	clearInterval(counterTrafficLight);
 }
 
 SequentialTrafficLight.propTypes = {
