@@ -1,11 +1,11 @@
 import React from "react";
 
-import InitialTrafficLight from "./initial-traffic-light.js";
+import SequentialTrafficLight from "./sequential-traffic-light";
 
 export function Home() {
 	return (
 		<div>
-			<InitialTrafficLight />
+			<SequentialTrafficLight initSequential="2" />
 		</div>
 	);
 }

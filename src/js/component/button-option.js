@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
-import InitialTrafficLight from "./initial-traffic-light";
 import SequentialTrafficLight from "./sequential-traffic-light";
-import { stopSequentialTrafficLight } from "./sequential-traffic-light";
-
 import * as Param from "./parameters.js";
 
 export default function ButtonOption() {
@@ -20,7 +17,10 @@ export default function ButtonOption() {
 				break;
 
 			case 2:
-				stopSequentialTrafficLight();
+				ReactDOM.render(
+					<SequentialTrafficLight initSequential="2" />,
+					document.querySelector("#app")
+				);
 
 				break;
 		}

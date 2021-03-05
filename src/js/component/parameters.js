@@ -8,3 +8,4 @@ export const HIGHGREENLIGHT = "highGreenLight";
 export const SELECTEDREDLIGHT = SELECTEDLIGHT + " highRedLight";
 export const SELECTEDYELLOWLIGHT = SELECTEDLIGHT + " highYellowLight";
 export const SELECTEDGREENLIGHT = SELECTEDLIGHT + " highGreenLight";
+export const SECONDSCOUNTER = 1000;

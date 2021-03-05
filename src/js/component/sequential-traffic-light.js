@@ -75,7 +75,35 @@ export default class SequentialTrafficLight extends React.Component {
 				}
 
 				ReactDOM.render(trafficElement, document.querySelector("#app"));
-			}, 1000);
+			}, Param.SECONDSCOUNTER);
+		} else {
+			clearInterval(counterTrafficLight);
+
+			console.log("Entro a Stop.");
+
+			const trafficElement2 = (
+				<div>
+					<div className="container">
+						<div className="row">
+							<div className="col-5 mt-3 trafficClass">
+								<TrafficLight
+									redLight={Param.REDLIGHT}
+									yellowLight={Param.YELLOWLIGHT}
+									greenLight={Param.GREENLIGHT}
+									selectedLightRed=""
+									selectedLightYellow=""
+									selectedLightGreen=""
+								/>
+							</div>
+							<div className="col-7">
+								<ButtonOption />
+							</div>
+						</div>
+					</div>
+				</div>
+			);
+
+			ReactDOM.render(trafficElement2, document.querySelector("#app"));
 		}
 
 		return (
@@ -100,10 +128,6 @@ export default class SequentialTrafficLight extends React.Component {
 			</div>
 		);
 	}
-}
-
-export function stopSequentialTrafficLight() {
-	clearInterval(counterTrafficLight);
 }
 
 SequentialTrafficLight.propTypes = {
