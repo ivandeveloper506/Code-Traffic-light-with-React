@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import PropType from "prop-types";
 import TrafficLight from "./traffic-light.js";
-import InitialTrafficLight from "./initial-traffic-light";
 import ButtonOption from "./button-option.js";
 import * as Param from "./parameters.js";
 
@@ -16,11 +15,6 @@ export default class SequentialTrafficLight extends React.Component {
 		let initSequential = this.props.initSequential;
 
 		let counter = 1;
-
-		console.log(
-			"*** Estoy en [SequentialTrafficLight]  -   initSequential***"
-		);
-		console.log(initSequential);
 
 		if (initSequential === "1") {
 			counterTrafficLight = setInterval(() => {
