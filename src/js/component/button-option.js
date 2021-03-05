@@ -85,7 +85,7 @@ export default function ButtonOption() {
 
 	return (
 		<div>
-			<div className="row">
+			<div className="row buttonOptionClass">
 				<div
 					onClick={() => setButtonSelected(1)}
 					className="turnTrafficLight">

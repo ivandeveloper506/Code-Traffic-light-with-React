@@ -25,7 +25,7 @@ export default class SequentialTrafficLight extends React.Component {
 					<div>
 						<div className="container">
 							<div className="row">
-								<div className="col-6 mt-3 trafficClass">
+								<div className="col-5 mt-3 trafficClass">
 									<TrafficLight
 										redLight={Param.REDLIGHT}
 										yellowLight={Param.YELLOWLIGHT}
@@ -39,7 +39,7 @@ export default class SequentialTrafficLight extends React.Component {
 										}
 									/>
 								</div>
-								<div className="col-6 mt-5 optionClass">
+								<div className="col-7">
 									<ButtonOption />
 								</div>
 							</div>
@@ -78,14 +78,14 @@ export default class SequentialTrafficLight extends React.Component {
 				}
 
 				ReactDOM.render(trafficElement, document.querySelector("#app"));
-			}, 2000);
+			}, 1000);
 		}
 
 		return (
 			<div>
 				<div className="container">
 					<div className="row">
-						<div className="col-6 mt-3 trafficClass">
+						<div className="col-5 mt-3 trafficClass">
 							<TrafficLight
 								redLight={Param.REDLIGHT}
 								yellowLight={Param.YELLOWLIGHT}
@@ -95,7 +95,7 @@ export default class SequentialTrafficLight extends React.Component {
 								selectedLightGreen=""
 							/>
 						</div>
-						<div className="col-6 mt-5 optionClass">
+						<div className="col-7">
 							<ButtonOption />
 						</div>
 					</div>
