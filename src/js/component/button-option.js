@@ -1,3 +1,11 @@
+/*******************************************************************************/
+/* Fecha Creación: 07 Marzo 2021.                                              */
+/* Autor:          Iván Fonseca Castro                                         */
+/*                                                                             */
+/* Descripción:   Archivo para crear componentes de los botones de control de  */
+/*                iniciar y deterner.                                          */
+/*******************************************************************************/
+
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import SequentialTrafficLight from "./sequential-traffic-light";
@@ -29,15 +37,23 @@ export default function ButtonOption() {
 	return (
 		<div>
 			<div className="row buttonOptionClass">
-				<div
-					onClick={() => setButtonSelected(1)}
-					className="turnTrafficLight">
-					<i className="fas fa-caret-square-right"></i>
+				<div>
+					{/* Componente para Botón de Iniciar */}
+					<button
+						onClick={() => setButtonSelected(1)}
+						type="button"
+						className="btn btn-light btn-lg turnTrafficLight">
+						<i className="fas fa-caret-square-right"></i> Iniciar
+					</button>
 				</div>
-				<div
-					onClick={() => setButtonSelected(2)}
-					className="stopTrafficLight">
-					<i className="fas fa-stop-circle"></i>
+				<div>
+					{/* Componente para Botón de Detener */}
+					<button
+						onClick={() => setButtonSelected(2)}
+						type="button"
+						className="btn btn-warning btn-lg stopTrafficLight">
+						<i className="fas fa-stop-circle"></i> Detener
+					</button>
 				</div>
 			</div>
 		</div>

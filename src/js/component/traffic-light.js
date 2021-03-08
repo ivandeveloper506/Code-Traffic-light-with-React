@@ -1,3 +1,10 @@
+/*******************************************************************************/
+/* Fecha Creación: 07 Marzo 2021.                                              */
+/* Autor:          Iván Fonseca Castro                                         */
+/*                                                                             */
+/* Descripción:   Archivo principal que renderiza el semaforo en el DOM.       */
+/*******************************************************************************/
+
 import React, { useState } from "react";
 import PropType from "prop-types";
 import * as Param from "./parameters.js";
@@ -70,6 +77,7 @@ export default class TrafficLight extends React.Component {
 	}
 }
 
+// Props que permite controlar las propiedades para los diferentes estados de las luces del semaforo.
 TrafficLight.propTypes = {
 	redLight: PropType.string,
 	yellowLight: PropType.string,

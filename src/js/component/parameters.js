@@ -1,3 +1,14 @@
+/*******************************************************************************/
+/* Fecha Creación: 07 Marzo 2021.                                              */
+/* Autor:          Iván Fonseca Castro                                         */
+/*                                                                             */
+/* Descripción:   Archivo principal que permite compartir valores por medio de */
+/*                constantes o variables en lugares comunes de la aplicación,  */
+/*                si eventualmente algún valor debe cambiar en el tiempo, solo */
+/*                se modifica en este archivo y se refleja en todos los        */
+/*                lugares donde se utilice.                                    */
+/*******************************************************************************/
+
 export const SELECTEDLIGHT = "selectedLight";
 export const REDLIGHT = "redLight";
 export const YELLOWLIGHT = "yellowLight";

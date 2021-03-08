@@ -1,3 +1,12 @@
+/*******************************************************************************/
+/* Fecha Creación: 07 Marzo 2021.                                              */
+/* Autor:          Iván Fonseca Castro                                         */
+/*                                                                             */
+/* Descripción:   Archivo principal con la funcionalidad que permite           */
+/*                renderizar las luces del semaforo, ya sea para uso manual o  */
+/*                secuencial.                                                  */
+/*******************************************************************************/
+
 import React from "react";
 import ReactDOM from "react-dom";
 import PropType from "prop-types";
@@ -78,8 +87,6 @@ export default class SequentialTrafficLight extends React.Component {
 			}, Param.SECONDSCOUNTER);
 		} else {
 			clearInterval(counterTrafficLight);
-
-			console.log("Entro a Stop.");
 
 			const trafficElement2 = (
 				<div>
